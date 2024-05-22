@@ -251,7 +251,7 @@ function updateCoreTemp() {
 
     tmp.core_bonus = getBonusReactor()
 
-    var scale = 10
-    if (hasDepthMilestone(4,2)) scale += 5
+    var scale = 20
+    if (hasDepthMilestone(4,2)) scale += 15
     tmp.core_scale1 = scale
 }
