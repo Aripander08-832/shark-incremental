@@ -1,8 +1,8 @@
 const EVOLUTION_TREE = {
     faith_cost: [
-        ["fish",x=>Decimal.pow(10,Decimal.pow(1e4,x.add(1))),x=>x.log10().log(1e4).floor()],
+        ["fish",x=>Decimal.pow(10,Decimal.pow(1e3,x.add(1))),x=>x.log10().log(1e3).floor()],
         ["prestige",x=>Decimal.pow(10,Decimal.pow(1e3,x.add(1))),x=>x.log10().log(1e3).floor()],
-        ["core",x=>Decimal.pow(1e60,x.add(1).scale(20,2,'P')),x=>x.log(1e60).scale(20,2,'P',true).floor()],
+        ["core",x=>Decimal.pow(1e54,x.add(1).scale(40,2,'P')),x=>x.log(1e54).scale(40,2,'P',true).floor()],
     ],
 
     getCost: i => 1 + Math.floor(i/4),
