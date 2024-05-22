@@ -5,8 +5,8 @@ const CORE_REACTOR = [
         get req_text() { return CURRENCIES.core.costName },
         get resource() { return CURRENCIES.core.amount },
 
-        require: l => Decimal.pow(2,l).ceil(),
-        bulk: x => x.log(2),
+        require: l => Decimal.pow(1.4,l).ceil(),
+        bulk: x => x.log(1.4),
 
         effect: l=>{
             let x = player.fish.max(10).log10().log10().div(100).mul(l).mul(coreReactorEffect(4))
