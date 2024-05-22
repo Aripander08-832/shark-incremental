@@ -5,11 +5,11 @@ const CORE_REACTOR = [
         get req_text() { return CURRENCIES.core.costName },
         get resource() { return CURRENCIES.core.amount },
 
-        require: l => Decimal.pow(1.4,l).ceil(),
-        bulk: x => x.log(1.4),
+        require: l => Decimal.pow(1.24,l).ceil(),
+        bulk: x => x.log(1.24),
 
         effect: l=>{
-            let x = player.fish.max(10).log10().log10().div(100).mul(l).mul(coreReactorEffect(4))
+            let x = player.fish.max(100).log10().log10().div(100).mul(l).mul(coreReactorEffect(4))
             if (hasResearch('c8')) x = x.mul(2)
             return x.add(1)
         },
@@ -20,8 +20,8 @@ const CORE_REACTOR = [
         get req_text() { return CURRENCIES.fish.costName },
         get resource() { return CURRENCIES.fish.amount },
         
-        require: l => Decimal.pow(1e100,l.pow(3)).mul('e6000'),
-        bulk: x => x.div('e6000').log(1e100).root(3),
+        require: l => Decimal.pow(1e70,l.pow(2.3)).mul('e6000'),
+        bulk: x => x.div('e6000').log(1e70).root(2.3),
 
         effect: l=>{
             let x = player.prestige.shards.max(10).log10().log10().div(100).mul(l).mul(coreReactorEffect(5))
