@@ -19,7 +19,7 @@ const RESETS = {
         },
     },
     core: {
-        get require() { return player.prestige.total.gte('e450') }, 
+        get require() { return player.prestige.total.gte('e350') }, 
         reset(force) {
             if (!force) {
                 gainCurrency('core',tmp.currency_gain.core)
